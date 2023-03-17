@@ -29,6 +29,10 @@ namespace Calendario
             textBoxDataInicial.Clear();
             textBoxDataFinal.Clear();
             textBoxDataAtual.Clear();
+
+            textBoxDataInicial2.Clear();
+            textBoxDataFinal2.Clear();
+            textBoxDataAtual2.Clear();
         }
     }
 }

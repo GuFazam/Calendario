@@ -37,6 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnPegarData = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxDataInicial2 = new System.Windows.Forms.TextBox();
+            this.textBoxDataFinal2 = new System.Windows.Forms.TextBox();
+            this.textBoxDataAtual2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -50,6 +56,7 @@
             // 
             // textBoxDataInicial
             // 
+            this.textBoxDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDataInicial.Location = new System.Drawing.Point(418, 57);
             this.textBoxDataInicial.Name = "textBoxDataInicial";
             this.textBoxDataInicial.Size = new System.Drawing.Size(100, 20);
@@ -57,6 +64,7 @@
             // 
             // textBoxDataFinal
             // 
+            this.textBoxDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDataFinal.Location = new System.Drawing.Point(418, 95);
             this.textBoxDataFinal.Name = "textBoxDataFinal";
             this.textBoxDataFinal.Size = new System.Drawing.Size(100, 20);
@@ -64,6 +72,7 @@
             // 
             // textBoxDataAtual
             // 
+            this.textBoxDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDataAtual.Location = new System.Drawing.Point(418, 135);
             this.textBoxDataAtual.Name = "textBoxDataAtual";
             this.textBoxDataAtual.Size = new System.Drawing.Size(100, 20);
@@ -130,12 +139,75 @@
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(52, 249);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Data Inicial: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(52, 287);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 18);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Data Final: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(52, 324);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 18);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Data Atual: ";
+            // 
+            // textBoxDataInicial2
+            // 
+            this.textBoxDataInicial2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDataInicial2.Location = new System.Drawing.Point(153, 248);
+            this.textBoxDataInicial2.Name = "textBoxDataInicial2";
+            this.textBoxDataInicial2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDataInicial2.TabIndex = 12;
+            // 
+            // textBoxDataFinal2
+            // 
+            this.textBoxDataFinal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDataFinal2.Location = new System.Drawing.Point(153, 286);
+            this.textBoxDataFinal2.Name = "textBoxDataFinal2";
+            this.textBoxDataFinal2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDataFinal2.TabIndex = 13;
+            // 
+            // textBoxDataAtual2
+            // 
+            this.textBoxDataAtual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDataAtual2.Location = new System.Drawing.Point(153, 323);
+            this.textBoxDataAtual2.Name = "textBoxDataAtual2";
+            this.textBoxDataAtual2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDataAtual2.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(621, 297);
+            this.ClientSize = new System.Drawing.Size(621, 396);
+            this.Controls.Add(this.textBoxDataAtual2);
+            this.Controls.Add(this.textBoxDataFinal2);
+            this.Controls.Add(this.textBoxDataInicial2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnPegarData);
             this.Controls.Add(this.label3);
@@ -163,6 +235,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPegarData;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxDataInicial2;
+        private System.Windows.Forms.TextBox textBoxDataFinal2;
+        private System.Windows.Forms.TextBox textBoxDataAtual2;
     }
 }
 
