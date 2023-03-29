@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.textBoxDataInicial = new System.Windows.Forms.TextBox();
             this.textBoxDataFinal = new System.Windows.Forms.TextBox();
@@ -40,9 +42,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxDataInicial2 = new System.Windows.Forms.TextBox();
-            this.textBoxDataFinal2 = new System.Windows.Forms.TextBox();
-            this.textBoxDataAtual2 = new System.Windows.Forms.TextBox();
+            this.textBoxAutoInicial = new System.Windows.Forms.TextBox();
+            this.textBoxAutoFinal = new System.Windows.Forms.TextBox();
+            this.textBoxAutoAtual = new System.Windows.Forms.TextBox();
+            this.CalendarioIcone = new System.Windows.Forms.NotifyIcon(this.components);
+            this.MenuNotificacoes = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Restaurar = new System.Windows.Forms.ToolStripMenuItem();
+            this.Mensagem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Fechar = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuNotificacoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -53,6 +61,7 @@
             this.monthCalendar1.ShowToday = false;
             this.monthCalendar1.TabIndex = 0;
             this.monthCalendar1.TabStop = false;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // textBoxDataInicial
             // 
@@ -131,9 +140,9 @@
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.Turquoise;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(312, 196);
+            this.btnLimpar.Location = new System.Drawing.Point(312, 192);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(206, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(206, 27);
             this.btnLimpar.TabIndex = 8;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -172,39 +181,74 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Data Atual: ";
             // 
-            // textBoxDataInicial2
+            // textBoxAutoInicial
             // 
-            this.textBoxDataInicial2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDataInicial2.Location = new System.Drawing.Point(153, 248);
-            this.textBoxDataInicial2.Name = "textBoxDataInicial2";
-            this.textBoxDataInicial2.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDataInicial2.TabIndex = 12;
+            this.textBoxAutoInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAutoInicial.Location = new System.Drawing.Point(153, 248);
+            this.textBoxAutoInicial.Name = "textBoxAutoInicial";
+            this.textBoxAutoInicial.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAutoInicial.TabIndex = 12;
             // 
-            // textBoxDataFinal2
+            // textBoxAutoFinal
             // 
-            this.textBoxDataFinal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDataFinal2.Location = new System.Drawing.Point(153, 286);
-            this.textBoxDataFinal2.Name = "textBoxDataFinal2";
-            this.textBoxDataFinal2.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDataFinal2.TabIndex = 13;
+            this.textBoxAutoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAutoFinal.Location = new System.Drawing.Point(153, 286);
+            this.textBoxAutoFinal.Name = "textBoxAutoFinal";
+            this.textBoxAutoFinal.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAutoFinal.TabIndex = 13;
             // 
-            // textBoxDataAtual2
+            // textBoxAutoAtual
             // 
-            this.textBoxDataAtual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDataAtual2.Location = new System.Drawing.Point(153, 323);
-            this.textBoxDataAtual2.Name = "textBoxDataAtual2";
-            this.textBoxDataAtual2.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDataAtual2.TabIndex = 14;
+            this.textBoxAutoAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAutoAtual.Location = new System.Drawing.Point(153, 323);
+            this.textBoxAutoAtual.Name = "textBoxAutoAtual";
+            this.textBoxAutoAtual.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAutoAtual.TabIndex = 14;
+            // 
+            // CalendarioIcone
+            // 
+            this.CalendarioIcone.ContextMenuStrip = this.MenuNotificacoes;
+            this.CalendarioIcone.Icon = ((System.Drawing.Icon)(resources.GetObject("CalendarioIcone.Icon")));
+            this.CalendarioIcone.Text = "CalendarioIcone";
+            this.CalendarioIcone.Visible = true;
+            // 
+            // MenuNotificacoes
+            // 
+            this.MenuNotificacoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Restaurar,
+            this.Mensagem,
+            this.Fechar});
+            this.MenuNotificacoes.Name = "MenuNotificacoes";
+            this.MenuNotificacoes.Size = new System.Drawing.Size(134, 70);
+            this.MenuNotificacoes.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuNotificacoes_ItemClicked);
+            // 
+            // Restaurar
+            // 
+            this.Restaurar.Name = "Restaurar";
+            this.Restaurar.Size = new System.Drawing.Size(133, 22);
+            this.Restaurar.Text = "Restaurar";
+            // 
+            // Mensagem
+            // 
+            this.Mensagem.Name = "Mensagem";
+            this.Mensagem.Size = new System.Drawing.Size(133, 22);
+            this.Mensagem.Text = "Mensagem";
+            // 
+            // Fechar
+            // 
+            this.Fechar.Name = "Fechar";
+            this.Fechar.Size = new System.Drawing.Size(133, 22);
+            this.Fechar.Text = "Fechar";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(621, 396);
-            this.Controls.Add(this.textBoxDataAtual2);
-            this.Controls.Add(this.textBoxDataFinal2);
-            this.Controls.Add(this.textBoxDataInicial2);
+            this.ClientSize = new System.Drawing.Size(621, 370);
+            this.Controls.Add(this.textBoxAutoAtual);
+            this.Controls.Add(this.textBoxAutoFinal);
+            this.Controls.Add(this.textBoxAutoInicial);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -219,6 +263,7 @@
             this.Controls.Add(this.monthCalendar1);
             this.Name = "Form1";
             this.Text = "Calendário";
+            this.MenuNotificacoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,9 +283,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxDataInicial2;
-        private System.Windows.Forms.TextBox textBoxDataFinal2;
-        private System.Windows.Forms.TextBox textBoxDataAtual2;
+        private System.Windows.Forms.TextBox textBoxAutoInicial;
+        private System.Windows.Forms.TextBox textBoxAutoFinal;
+        private System.Windows.Forms.TextBox textBoxAutoAtual;
+        private System.Windows.Forms.NotifyIcon CalendarioIcone;
+        private System.Windows.Forms.ContextMenuStrip MenuNotificacoes;
+        private System.Windows.Forms.ToolStripMenuItem Restaurar;
+        private System.Windows.Forms.ToolStripMenuItem Mensagem;
+        private System.Windows.Forms.ToolStripMenuItem Fechar;
     }
 }
 

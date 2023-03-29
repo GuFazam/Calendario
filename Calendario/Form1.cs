@@ -30,9 +30,32 @@ namespace Calendario
             textBoxDataFinal.Clear();
             textBoxDataAtual.Clear();
 
-            textBoxDataInicial2.Clear();
-            textBoxDataFinal2.Clear();
-            textBoxDataAtual2.Clear();
+            textBoxAutoInicial.Clear();
+            textBoxAutoFinal.Clear();
+            textBoxAutoAtual.Clear();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            textBoxAutoInicial.Text = monthCalendar1.SelectionStart.ToShortDateString();
+            textBoxAutoFinal.Text = monthCalendar1.SelectionEnd.ToShortDateString();
+            textBoxAutoAtual.Text = monthCalendar1.TodayDate.ToShortDateString();
+        }
+
+        private void MenuNotificacoes_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Name.ToString() == "Fechar")
+            {
+                this.Close();
+            }
+            else if (e.ClickedItem.Name.ToString() == "Restaurar")
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else if (e.ClickedItem.Name.ToString() == "Mensagem")
+            {
+                MessageBox.Show("Você está lendo essa mensagem!!!");
+            }
         }
     }
 }
